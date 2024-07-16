@@ -30,7 +30,7 @@ namespace ALPHA_BOT
             client = new DiscordClient(discordConfig);
             //register slash command
             var slash = client.UseSlashCommands();
-            slash.RegisterCommands<Commands>(853718869910880258);
+            slash.RegisterCommands<Commands>();
             //this is what runs when the client has connected
             //client.Ready += Client_Ready;
             //connect to discord
