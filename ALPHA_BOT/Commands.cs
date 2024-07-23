@@ -7,19 +7,25 @@ namespace ALPHA_BOT
 {
     public class Commands : ApplicationCommandModule
     {
-        //login slash command
+        /// <summary>
+        /// Login slash command. Prints a string to ease logging into the chatroom.
+        /// </summary>
         [SlashCommand("login", "Log into the chatroom.")]
         public async Task LoginCommand(InteractionContext ctx, [Option("username", "Username to login with")] String user)
         {
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent($"**{user} is ONLINE!**"));
         }
-        //logout slash command
+        /// <summary>
+        /// Logout slash command. Prints a string to logout of the chatroom.
+        /// </summary>
         [SlashCommand("logout", "Log out of the chatroom.")]
         public async Task LogoutCommand(InteractionContext ctx, [Option("username", "Username to logout")] String user)
         {
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent($"**{user} is OFFLINE!**"));
         }
-        //setting status command
+        /// <summary>
+        /// Setting status command. Prints a string to set a chatroom status. 
+        /// </summary>
         [SlashCommand("set-status", "Set your status to a custom string.")]
         public async Task StatusCommand(InteractionContext ctx,
         [Option("user", "Username")] String user,
@@ -28,6 +34,9 @@ namespace ALPHA_BOT
             var statusString = $"**{user} has set their status to {status.ToUpper()}!**";
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(statusString));
         }
+        /// <summary>
+        /// Trading items command. Prints a string to trade items with another chatroom user.
+        /// </summary>
         [SlashCommand("trade", "Trade items with another user.")]
         public async Task TradeCommand(InteractionContext ctx, 
         [Option("trader", "User who is trading an item.")] String trader, 
@@ -38,6 +47,9 @@ namespace ALPHA_BOT
             var tradeString = $"**{trader} has initiated a TRADE to {recipient} | [{tradeItem} -> {recievedItem}]**";
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(tradeString));
         }
+        /// <summary>
+        /// Accept command. Prints a string to accept an incomming trade. 
+        /// </summary>
         [SlashCommand("accept", "Accept an incomming trade.")]
         public async Task AcceptCommand(InteractionContext ctx,
         [Option("reciever", "Recipient (your username)")] String recipient,
@@ -46,6 +58,9 @@ namespace ALPHA_BOT
             var acceptString = $"**{recipient} has ACCEPTED {trader}'s TRADE!**";
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(acceptString));
         }
+        /// <summary>
+        /// Guardian's kick command. Prints a string to ease kicking another user. 
+        /// </summary>
         [SlashCommand("guardian-kick", "Guardian kicks another user. (Please don't use if you don't have permission!)")]
         public async Task GuardianKickCommand(InteractionContext ctx,
         [Option("user", "User to kick.")] String user,
