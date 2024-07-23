@@ -2,6 +2,7 @@
 using DSharpPlus;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Entities;
+using DSharpPlus.CommandsNext.Attributes;
 
 namespace ALPHA_BOT
 {
@@ -62,12 +63,24 @@ namespace ALPHA_BOT
         /// Guardian's kick command. Prints a string to ease kicking another user. 
         /// </summary>
         [SlashCommand("guardian-kick", "Guardian kicks another user. (Please don't use if you don't have permission!)")]
+        [RequirePermissions(Permissions.Administrator)]
         public async Task GuardianKickCommand(InteractionContext ctx,
         [Option("user", "User to kick.")] String user,
         [Option("time", "How long they're kicked for.")] String time,
         [Option("reason", "Reason for kick.")] String reason)
         {
             var kickString = $"**GUARDIAN has KICKED {user} for {time} | REASON: {reason}**";
+            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(kickString));
+
+        }
+        [SlashCommand("override", "OVERRIDE KICK")]
+        [RequireRoles(RoleCheckMode.MatchNames, "dark chip enjoyer")]
+        public async Task OverrideKick(InteractionContext ctx,
+        [Option("user", "User to kick.")] String user,
+        [Option("time", "How long they're kicked for.")] String time,
+        [Option("reason", "Reason for kick.")] String reason)
+        {
+            var kickString = $"**ManOfScience has KICKED {user} for {time} | REASON: {reason}**";
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(kickString));
 
         }
