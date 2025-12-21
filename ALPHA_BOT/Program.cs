@@ -30,7 +30,7 @@ namespace ALPHA_BOT
             DiscordClient client = builder.Build();
 
             //specify a status
-            DiscordActivity status = new("hello", DiscordActivityType.ListeningTo);
+            DiscordActivity status = new("TESTING!", DiscordActivityType.ListeningTo);
             //connect to discord
             await client.ConnectAsync(status, DiscordUserStatus.Online);
             //run forever
