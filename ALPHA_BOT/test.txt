@@ -1,3 +1,1 @@
-:dog: IM_ROCKMAN
-:video_game: BATTLE_ROUTINE
-:knife:SAViOR.VIR
+:dog:IM_ROCKMAN :video_game:BATTLE_ROUTINE
