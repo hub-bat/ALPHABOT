@@ -8,7 +8,7 @@ namespace ALPHA_BOT
 {
     public class Commands : ApplicationCommandModule
     {
-        /// <summary>
+        /* /// <summary>
         /// Login slash command. Prints a string to ease logging into the chatroom.
         /// </summary>
         [SlashCommand("login", "Log into the chatroom.")]
@@ -72,7 +72,7 @@ namespace ALPHA_BOT
             var kickString = $"**GUARDIAN has KICKED {user} for {time} | REASON: {reason}**";
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(kickString));
 
-        }
+        } */
 
     }
 }

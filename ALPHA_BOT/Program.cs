@@ -1,15 +1,15 @@
 ﻿using System;
 using DSharpPlus;
 using System.Threading.Tasks;
-using DSharpPlus.SlashCommands;
 using DSharpPlus.EventArgs;
 using Microsoft.Extensions.Logging;
+using DSharpPlus.Entities;
+using DSharpPlus.Commands;
 
 namespace ALPHA_BOT
 {
     class Program
     {
-        //private static DiscordClient client {get; set;}
         static async Task Main(string[] args)
         {
             //read token
@@ -19,10 +19,20 @@ namespace ALPHA_BOT
             //set up discord config
             //12/20/25 - Updating to use the new DSharpPlus building with new intents
             DiscordClientBuilder builder = DiscordClientBuilder.CreateDefault(jsonReader.token, DiscordIntents.AllUnprivileged);
+            //setup commands extensions
+            builder.UseCommands((IServiceProvider serviceProvider, CommandsExtension extension) =>
+            {
+                extension.AddCommand(typeof(NewCommands));
+                
+            }, new CommandsConfiguration()
+            {
+            });
             DiscordClient client = builder.Build();
 
+            //specify a status
+            DiscordActivity status = new("hello", DiscordActivityType.ListeningTo);
             //connect to discord
-            await client.ConnectAsync();
+            await client.ConnectAsync(status, DiscordUserStatus.Online);
             //run forever
             await Task.Delay(-1);
 
