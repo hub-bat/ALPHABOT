@@ -9,7 +9,7 @@ namespace ALPHA_BOT
 {
     class Program
     {
-        private static DiscordClient client {get; set;}
+        //private static DiscordClient client {get; set;}
         static async Task Main(string[] args)
         {
             //read token
@@ -17,33 +17,16 @@ namespace ALPHA_BOT
             await jsonReader.ReadJSON();
 
             //set up discord config
-            var discordConfig = new DiscordConfiguration()
-            {
-                Intents = DiscordIntents.All,
-                Token = jsonReader.token,
-                TokenType = TokenType.Bot,
-                AutoReconnect = true,
-                MinimumLogLevel = LogLevel.Debug
-            };
+            //12/20/25 - Updating to use the new DSharpPlus building with new intents
+            DiscordClientBuilder builder = DiscordClientBuilder.CreateDefault(jsonReader.token, DiscordIntents.AllUnprivileged);
+            DiscordClient client = builder.Build();
 
-            //set up client
-            client = new DiscordClient(discordConfig);
-            //register slash command
-            var slash = client.UseSlashCommands();
-            slash.RegisterCommands<Commands>();
-            //this is what runs when the client has connected
-            //client.Ready += Client_Ready;
             //connect to discord
             await client.ConnectAsync();
             //run forever
             await Task.Delay(-1);
 
 
-        }
-
-        private static async Task Client_Ready(DiscordClient sender, ReadyEventArgs args)
-        {
-            throw new NotImplementedException();
         }
     }
 }
