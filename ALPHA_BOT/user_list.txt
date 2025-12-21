@@ -1,33 +1,33 @@
-:ghost: - Nick Shields
-:bust_in_silhouette: - Phantom
-:bat: - Indigo
-:smiling_imp: - Vyle
-:performing_arts: despian_tragedy
-:dragon: despian_comedy
-:black_square_button: ECHO
-:wolf: unchainedAbomination
-:broken_chain: BREAKyourCHAINS
-:white_square_button: logic_auto
-:no_mobile_phones: SPECTRUMS_OF_CHAOS
-:computer: user_MS863
-:construction: GateCrasher
-:broken_heart: ShadowCutterXX
-:gear: rockblade 
-:droplet: aquaneedlelover15 
-:fishing_pole_and_fish: MODEL3897L 
-:hibiscus: OxeyeDaisy 
-:cupid: VariableH\_bloodpump 
-:adhesive_bandage: heartsurgery 
-:pencil: research\_lyricist 
-:delusional:  ████████_█████
-:satellite_orbital:  frozen_heart
-:ice_cube:  StarryIceArrow
-:whale2: ShadowWolf 
-:zap: FireBolt 
-:comet: DashKing 
-:technologist: RCT_Fan_87 
+:ghost:Nick Shields
+:bust_in_silhouette:Phantom
+:bat:Indigo
+:smiling_imp:Vyle
+:performing_arts:despian_tragedy
+:dragon:despian_comedy
+:black_square_button:ECHO
+:wolf:unchainedAbomination
+:broken_chain:BREAKyourCHAINS
+:white_square_button:logic_auto
+:no_mobile_phones:SPECTRUMS_OF_CHAOS
+:computer:user_MS863
+:construction:GateCrasher
+:broken_heart:ShadowCutterXX
+:gear:rockblade 
+:droplet:aquaneedlelover15 
+:fishing_pole_and_fish:MODEL3897L 
+:hibiscus:OxeyeDaisy 
+:cupid:VariableH\_bloodpump 
+:adhesive_bandage:heartsurgery 
+:pencil:research\_lyricist 
+:delusional:████████_█████
+:satellite_orbital:frozen_heart
+:ice_cube:StarryIceArrow
+:whale2:ShadowWolf 
+:zap:FireBolt 
+:comet:DashKing 
+:technologist:RCT_Fan_87 
 :scarf:NumbersGuy 
-:fleur_de_lis: GraveMaker 
+:fleur_de_lis:GraveMaker 
 :astronaut: AdAstra 
 :crocodile: BiggerChallenges 
 :desktop: ManOfScience 
