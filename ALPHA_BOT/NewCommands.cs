@@ -10,6 +10,7 @@ using ALPHA_BOT.Lists;
 
 namespace ALPHA_BOT
 {
+    [Command("usermanager")]
     public class NewCommands
     {
         [Command("login")]
