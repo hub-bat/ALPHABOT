@@ -22,7 +22,7 @@ namespace ALPHA_BOT
             //setup commands extensions
             builder.UseCommands((IServiceProvider serviceProvider, CommandsExtension extension) =>
             {
-                extension.AddCommand(typeof(NewCommands));
+                extension.AddCommand(typeof(UserManager));
                 
             }, new CommandsConfiguration()
             {
