@@ -73,17 +73,6 @@ namespace ALPHA_BOT
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(kickString));
 
         }
-        [SlashCommand("override", "OVERRIDE KICK")]
-        [RequireRoles(RoleCheckMode.MatchNames, "dark chip enjoyer")]
-        public async Task OverrideKick(InteractionContext ctx,
-        [Option("user", "User to kick.")] String user,
-        [Option("time", "How long they're kicked for.")] String time,
-        [Option("reason", "Reason for kick.")] String reason)
-        {
-            var kickString = $"**ManOfScience has KICKED {user} for {time} | REASON: {reason}**";
-            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(kickString));
-
-        }
 
     }
 }
