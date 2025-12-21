@@ -15,10 +15,10 @@ namespace ALPHA_BOT
     {
         [Command("login")]
         public static async ValueTask LoginAsync(CommandContext context, [SlashAutoCompleteProvider<UsersProvider>] string user) =>
-            await context.RespondAsync($"**{user}has LOGGED IN!**");
+            await context.RespondAsync($"**{user} has LOGGED IN!**");
         
         [Command("logout")]
         public static async ValueTask LogoutAsync(CommandContext context, [SlashAutoCompleteProvider<UsersProvider>] string user) =>
-            await context.RespondAsync($"**{user}has LOGGED OUT!**");
+            await context.RespondAsync($"**{user} has LOGGED OUT!**");
     }
 }
