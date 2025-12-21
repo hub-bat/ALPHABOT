@@ -14,7 +14,11 @@ namespace ALPHA_BOT
     public class NewCommands
     {
         [Command("login")]
-        public static async ValueTask ExecuteAsync(CommandContext context, [SlashAutoCompleteProvider<UsersProvider>] string user) =>
-            await context.RespondAsync($"**{user} has LOGGED IN!**");
+        public static async ValueTask LoginAsync(CommandContext context, [SlashAutoCompleteProvider<UsersProvider>] string user) =>
+            await context.RespondAsync($"**{user}has LOGGED IN!**");
+        
+        [Command("logout")]
+        public static async ValueTask LogoutAsync(CommandContext context, [SlashAutoCompleteProvider<UsersProvider>] string user) =>
+            await context.RespondAsync($"**{user}has LOGGED OUT!**");
     }
 }
