@@ -31,9 +31,13 @@ namespace ALPHA_BOT
         {
             DiscordMember userEx = context.Member;
             if (userEx.Permissions == DiscordPermission.Administrator)
+            {
                 await context.RespondAsync($"**GUARDIAN has KICKED {user} for {time} | REASON: {reason}**");
-            else
-                await context.RespondAsync($"YOU DO NOT HAVE PERMISSION.");
+            }
+            //else
+            //{
+            //    await context.RespondAsync($"YOU DO NOT HAVE PERMISSION.");
+            //}
         }
     }
 }
