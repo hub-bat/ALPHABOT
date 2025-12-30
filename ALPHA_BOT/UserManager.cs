@@ -27,7 +27,6 @@ namespace ALPHA_BOT
         
         [Command("kick")]
         [Description("Guardian's Kick - Administrator only")]
-        [RequirePermissions(DiscordPermission.Administrator)]
         public static async ValueTask KickAsync(CommandContext context, [SlashAutoCompleteProvider<UsersProvider>][Description("Username to kick.")] string user, [Description("Amount of time.")] string time, [Description("Reason for kick.")] string reason)
         {
             DiscordMember userEx = context.Member;
