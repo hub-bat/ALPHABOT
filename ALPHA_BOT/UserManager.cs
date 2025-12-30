@@ -30,7 +30,11 @@ namespace ALPHA_BOT
         [RequirePermissions(DiscordPermission.Administrator)]
         public static async ValueTask KickAsync(CommandContext context, [SlashAutoCompleteProvider<UsersProvider>][Description("Username to kick.")] string user, [Description("Amount of time.")] string time, [Description("Reason for kick.")] string reason)
         {
-            await context.RespondAsync($"**GUARDIAN has KICKED {user} for {time} | REASON: {reason}**");
+            DiscordMember userEx = context.Member;
+            if (userEx.Permissions == DiscordPermission.Administrator)
+                await context.RespondAsync($"**GUARDIAN has KICKED {user} for {time} | REASON: {reason}**");
+            else
+                await context.RespondAsync($"YOU DO NOT HAVE PERMISSION.");
         }
     }
 }
